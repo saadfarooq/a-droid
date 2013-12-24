@@ -1,1 +1,2 @@
 include ':a-droid-views'
+include ':a-droid-examples'
