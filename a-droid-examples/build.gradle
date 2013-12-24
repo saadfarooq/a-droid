@@ -32,6 +32,6 @@ android {
 }
 
 dependencies {
-//    compile 'com.android.support:appcompat-v7:+'
-    compile 'com.adroid:a-droid-views:0.0.1@aar'
+//    compile 'com.adroid:a-droid-views:0.0.1@aar'
+    compile project(':a-droid-views')
 }

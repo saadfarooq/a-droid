@@ -1,21 +1,32 @@
 package com.adroid.views;
 
 import android.content.Context;
-import android.graphics.Paint;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.adroid.utils.FontUtils;
+
 public class FontTextView extends TextView {
     Context mContext;
-    public static final String ATTR_FONT_FILE = "fontFileName";
 
     public FontTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
 
-        final String fontFileName = attrs.getAttributeValue(
-                    "http://schemas.android.com/apk/res-auto", ATTR_FONT_FILE);
+        TypedArray a = mContext.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.FontTextview,
+                0,0);
+
+        String fontFileName = null;
+        assert a != null;
+        try {
+            fontFileName = a.getString(R.styleable.FontTextview_fontFile);
+        } finally {
+            a.recycle();
+        }
 
         if (fontFileName != null & !isInEditMode()) {
             init(fontFileName);
@@ -38,7 +49,6 @@ public class FontTextView extends TextView {
 
     @Override
     public void setTypeface(Typeface tf) {
-        super.setTypeface(tf);
-        super.setPaintFlags(this.getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG);
+        FontUtils.setFont(tf, this);
     }
 }
