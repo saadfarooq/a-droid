@@ -7,29 +7,6 @@ buildscript {
         classpath 'com.github.dcendents:android-maven-plugin:1.0'
     }
 }
-
-apply plugin: 'android-library'
-apply plugin: 'android-maven'
-
-repositories {
-    mavenCentral()
-}
-
-android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
-
-    defaultConfig {
-        minSdkVersion 7
-        versionCode 1
-        versionName "1.0"
-    }
-    release {
-        runProguard false
-        // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-    }
-}
-
 // apply plugin: 'maven'
 // apply plugin: 'signing'
 
