@@ -4,14 +4,17 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.adroid.utils.FontUtils;
 
-public class FontTextView extends TextView {
+/**
+ * EditText view with font applied via 'fontFile' XML attribute
+ */
+public class FontEditText extends EditText {
   Context mContext;
 
-  public FontTextView(Context context, AttributeSet attrs) {
+  public FontEditText(Context context, AttributeSet attrs) {
     super(context, attrs);
     this.mContext = context;
 
@@ -30,7 +33,7 @@ public class FontTextView extends TextView {
     }
   }
 
-  public FontTextView(Context context, String fontFileName) {
+  public FontEditText(Context context, String fontFileName) {
     super(context);
     this.mContext = context;
 

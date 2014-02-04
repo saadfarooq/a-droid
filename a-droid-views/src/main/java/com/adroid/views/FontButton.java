@@ -4,14 +4,17 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.Button;
 
 import com.adroid.utils.FontUtils;
 
-public class FontTextView extends TextView {
+/**
+ * A Button that can apply font from 'fontFile' XML attribute
+ */
+public class FontButton extends Button {
   Context mContext;
 
-  public FontTextView(Context context, AttributeSet attrs) {
+  public FontButton(Context context, AttributeSet attrs) {
     super(context, attrs);
     this.mContext = context;
 
@@ -30,7 +33,7 @@ public class FontTextView extends TextView {
     }
   }
 
-  public FontTextView(Context context, String fontFileName) {
+  public FontButton(Context context, String fontFileName) {
     super(context);
     this.mContext = context;
 
