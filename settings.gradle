@@ -1,2 +1,2 @@
-include ':a-droid-views'
+include ':a-droid-views', ':mylibrary'
 include ':a-droid-examples'
